@@ -1,0 +1,90 @@
+.page-header {
+  border-bottom: 1px solid #ECECEC;
+}
+
+.page-header__box {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__link--current {
+  color: $accent-color;
+  position: relative;
+
+  &::after {
+      display: inline-block;
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-color;
+    }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__list {
+  display: flex;
+  @extend %list;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  margin-left: 93px;
+}
+
+.navigation__item:not(:last-child),
+.contacts__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+}
+
+.contacts__icon {
+  margin-right: 10px;
+  --color4: currentColor;
+}
+
+.navigation__link,
+.contacts__link {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.contacts__icon {
+  fill: currentColor;
+}
+
+.contacts {
+display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+ @extend %list;
+}
+
+.navigation__link:hover,
+.navigation__link:focus,
+.contacts__link:hover,
+.contacts__link:focus {
+  color: $accent-color;
+}
+
+.contacts__link {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+
+  &:visited {
+      color: $primary-text-color;
+    }
+}

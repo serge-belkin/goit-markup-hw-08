@@ -1,0 +1,35 @@
+.clients {
+  display: flex;
+  @extend %list;
+}
+
+.clients__box {
+  width: 170px;
+  height: 92px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  @extend %flex-centred;
+}
+
+.clients__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients__link {
+  color: $tertiary-background-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:visited {
+      color: $tertiary-background-color;
+    }
+
+   &:hover,
+   &:focus {
+     color: $accent-color;
+     fill: $accent-color;
+   }
+}
+
+.clients__logo {
+  --color1: currentColor;
+}
