@@ -1,14 +1,29 @@
 .clients {
   display: flex;
+  flex-wrap: wrap;
   @extend %list;
+  padding-left: 45px;
+  padding-top: 30px;
+  margin-top: -30px;
+    margin-left: -30px;
 }
 
+.clients__item{
+flex-basis: calc((100% - 2 * 30px) / 2);
+margin-top: 30px;
+}
+
+
 .clients__box {
-  width: 170px;
   height: 92px;
   border: 1px solid currentColor;
   border-radius: 4px;
   @extend %flex-centred;
+
+  @media screen and (min-width:1200px) {
+  height: 92px;
+    width: 170px;
+  }
 }
 
 .clients__item:not(:last-child) {

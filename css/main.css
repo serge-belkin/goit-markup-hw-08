@@ -636,32 +636,64 @@ summary {
   }
 }
 .hero {
-  max-width: 1600px;
   margin: 0 auto;
+  max-width: 480px;
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    max-width: 1600px;
+  }
 }
 
 .overlay {
-  padding-top: 200px;
-  height: 600px;
-  background-color: rgba(47, 48, 58, 0.4);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-Img.jpg");
+  padding-top: 118px;
+  height: 400px;
+  max-width: 480px;
+  background-color: #2F303A;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/mobile/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/mobile/hero-2x.jpg");
+  }
+}
+@media screen and (min-width: 1200px) {
+  .overlay {
+    padding-top: 200px;
+    max-width: 1600px;
+    height: 600px;
+    background-color: #2F303A;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/desktop/hero.jpg");
+  }
+}
+@media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/desktop/hero-2x.jpg");
+  }
+}
 
 .hero__title {
-  max-width: 650px;
+  max-width: 360px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.6;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    max-width: 650px;
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .backdrop {
@@ -850,15 +882,30 @@ summary {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 768px) {
+  .features__title {
+    text-align: center;
+  }
+}
 
 .features {
-  display: flex;
-  margin-left: -30px;
+  display: block;
+}
+@media screen and (min-width: 1200px) {
+  .features {
+    display: flex;
+    margin-left: -30px;
+  }
 }
 
 .features__item {
-  flex-basis: calc(25% - 30px);
-  margin-left: 30px;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .features__item {
+    flex-basis: calc(25% - 30px);
+    margin-left: 30px;
+  }
 }
 
 .features__text {
@@ -866,11 +913,15 @@ summary {
 }
 
 .features__icon {
-  width: 270px;
   height: 120px;
   background-color: #F5F4FA;
   border-radius: 4px;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .features__icon {
+    width: 270px;
+  }
 }
 
 .products {
@@ -894,12 +945,23 @@ summary {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
+.section--no-padding {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .section--no-padding {
+    display: block;
+  }
+}
+
 .our-team {
   background-color: #F5F4FA;
 }
 
-.our-team__list {
-  display: flex;
+@media screen and (min-width: 1200px) {
+  .our-team__list {
+    display: flex;
+  }
 }
 
 .team-member {
@@ -907,14 +969,24 @@ summary {
   border-radius: 0px 0px 4px 4px;
 }
 .team-member:not(:last-child) {
-  margin-right: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .team-member:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .team-member__box {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
   background-color: #fff;
   border-radius: 4px;
+}
+@media screen and (min-width: 1200px) {
+  .team-member__box {
+    padding-bottom: 30px;
+  }
 }
 
 .team-member__name {
@@ -955,13 +1027,28 @@ summary {
 
 .clients {
   display: flex;
+  flex-wrap: wrap;
+  padding-left: 45px;
+  padding-top: 30px;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.clients__item {
+  flex-basis: calc((100% - 60px) / 2);
+  margin-top: 30px;
 }
 
 .clients__box {
-  width: 170px;
   height: 92px;
   border: 1px solid currentColor;
   border-radius: 4px;
+}
+@media screen and (min-width: 1200px) {
+  .clients__box {
+    height: 92px;
+    width: 170px;
+  }
 }
 
 .clients__item:not(:last-child) {

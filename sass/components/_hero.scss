@@ -1,34 +1,76 @@
 .hero {
-  max-width: 1600px;
-  margin: 0 auto;
+margin: 0 auto;
+max-width: 480px;
+  @media screen and (min-width: 1200px) {
+    max-width: 1600px;
+  }
 }
 
 .overlay {
-  padding-top: 200px;
-  height: 600px;
-  background-color: #2F303A66;
-  background-image: linear-gradient(to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)),
-    url("../images/hero-Img.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+padding-top: 118px;
+height: 400px;
+max-width: 480px;
+  background-color: $footer-bg-color;
+    background-image: linear-gradient(to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+      url("../images/mobile/hero.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+    @media (-webkit-min-device-pixel-ratio: 2),
+      (-o-min-device-pixel-ratio: 2/1),
+      (min-resolution: 2dppx) {
+        background-image:linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+            url("../images/mobile/hero-2x.jpg");
+      }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    max-width: 1600px;
+      height: 600px;
+      background-color: $footer-bg-color;
+      background-image: linear-gradient(to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)),
+        url("../images/desktop/hero.jpg");
+
+          @media (-webkit-min-device-pixel-ratio: 2),
+            (-o-min-device-pixel-ratio: 2/1),
+            (min-resolution: 2dppx) {
+              background-image: linear-gradient(to right,
+                  rgba(47, 48, 58, 0.4),
+                  rgba(47, 48, 58, 0.4)),
+                url("../images/desktop/hero-2x.jpg");
+            }
+  }
 }
 
 .hero__title {
-  @extend %title;
-  max-width: 650px;
+@extend %title;
+
+max-width: 360px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $tertiary-text-color;
+
+font-weight: 900;
+  font-size: 26px;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $tertiary-text-color;
+    
+ @media screen and (min-width: 1200px) {
+  max-width: 650px;
+    font-size: 44px;
+    line-height: 1.36;
+ }
+  
+  
 }
 
 .backdrop {
