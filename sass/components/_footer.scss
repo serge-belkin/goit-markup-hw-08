@@ -10,14 +10,29 @@
 }
 
 .footer__box {
+text-align: center;
+  @media screen and (min-width:1200px) {
   display: flex;
+  
+  }
+  
 }
 
 /* Стили списка адресов */
 
 .addres-thumb {
   width: 231px;
-  margin-right: 70px;
+
+  margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 480px) {
+        margin-bottom: 48px;
+    }
+  @media screen and (min-width:1200px) {
+    margin-right: 70px;
+  }
+  
 }
 
 .address__list {
@@ -80,22 +95,40 @@
   --color1: currentColor
 }
 
+.footer-sm {
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      margin-bottom: 48px;
+  }
+}
+
 /* стили формы подписки */
 
 .subscription {
-  display: flex;
-  align-items: flex-start;
-  margin-left: 93px;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+      align-items: flex-start;
+      margin-left: 93px;
+  }
+ 
 }
 
 .subscription__box {
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width:480px) {
+    align-items: center;
+  }
 }
 
 .subscription__email {
   height: 50px;
-  width: 358px;
+  width: 100%;
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -110,14 +143,21 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+
+@media screen and (min-width: 1200px) {
+  width: 358px;
+}
 }
 
 .subscription__btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 48px;
-  margin-left: 12px;
+  margin-top: 20px;
+  @media screen and (min-width: 1200px) {
+    margin-top: 48px;
+      margin-left: 12px;
+  }
 }
 
 .subscription__icon {
