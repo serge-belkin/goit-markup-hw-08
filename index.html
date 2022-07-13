@@ -217,7 +217,8 @@
             <li class="products__item">
               <img
                 class="products__img"
-                src="./images/box1.jpg"
+                srcset="./images/desktop/features-1.jpg 1x, ./images/desktop/features-1-2x.jpg 2x"
+                src="./images/desktop/features-1.jpg"
                 alt="Человек набирает код на клавиатуре"
                 width="370"
               />
@@ -226,7 +227,8 @@
             <li class="products__item">
               <img
                 class="products__img"
-                src="./images/box2.jpg"
+                srcset="./images/desktop/features-2.jpg 1x, ./images/desktop/features-2-2x.jpg 2x"
+                src="./images/desktop/features-2.jpg"
                 alt="Человек держит в руках смартфон"
                 width="370"
               />
@@ -235,7 +237,8 @@
             <li class="products__item">
               <img
                 class="products__img"
-                src="./images/box3.jpg"
+                srcset="./images/desktop/features-3.jpg 1x, ./images/desktop/features-3-2x.jpg 2x"
+                src="./images/desktop/features-3.jpg"
                 alt="Человек выбирает цвет из палитры на планшете"
                 width="370"
               />
@@ -251,12 +254,26 @@
           <h2 class="section__title">Наша команда</h2>
           <ul class="our-team__list">
             <li class="team-member">
-              <img
-                class="team-member__img"
-                src="./images/igor.jpg"
-                alt="Игорь Демьяненко"
-                width="270"
-              />
+              <picture>
+                <source
+                  srcset="./images/mobile/igor.jpg 1x, ./images/mobile/igor-2x.jpg 2x"
+                  media="(max-width: 480px)"
+                />
+                <source
+                  srcset="./images/tablet/igor.jpg 1x, ./images/tablet/igor-2x.jpg 2x"
+                  media="(min-width: 481px)"
+                />
+                <source
+                  srcset="./images/desktop/igor.jpg 1x, ./images/desktop/igor-2x.jpg 2x"
+                  media="(min-width: 769px)"
+                />
+                <img
+                  class="team-member__img"
+                  src="./images/mobile/igor.jpg"
+                  alt="Игорь Демьяненко"
+                />
+              </picture>
+
               <div class="team-member__box">
                 <h3 class="team-member__name">Игорь Демьяненко</h3>
                 <p lang="en" class="team-member__position">Product Designer</p>
@@ -293,12 +310,22 @@
               </div>
             </li>
             <li class="team-member">
-              <img
-                class="team-member__img"
-                src="./images/olga.jpg"
-                alt="Ольга Репина"
-                width="270"
-              />
+              <picture>
+                <source
+                  srcset="./images/mobile/olga.jpg 1x, ./images/mobile/olga-2x.jpg 2x"
+                  media="(max-width: 480px)"
+                />
+                <source
+                  srcset="./images/tablet/olga.jpg 1x, ./images/tablet/olga-2x.jpg 2x"
+                  media="(min-width: 481px)"
+                />
+                <source
+                  srcset="./images/desktop/olga.jpg 1x, ./images/desktop/olga-2x.jpg 2x"
+                  media="(min-width: 769px)"
+                />
+                <img class="team-member__img" src="./images/mobile/olga.jpg" alt="Ольга Репина" />
+              </picture>
+
               <div class="team-member__box">
                 <h3 class="team-member__name">Ольга Репина</h3>
                 <p lang="en" class="team-member__position">Frontend Developer</p>
@@ -335,6 +362,9 @@
               </div>
             </li>
             <li class="team-member">
+              <picture>
+                <source media="(min-width: )" srcset="" />
+              </picture>
               <img
                 class="team-member__img"
                 src="./images/nikolai.jpg"
@@ -377,6 +407,9 @@
               </div>
             </li>
             <li class="team-member">
+              <picture>
+                <source media="(min-width: )" srcset="" />
+              </picture>
               <img
                 class="team-member__img"
                 src="./images/michael.jpg"
