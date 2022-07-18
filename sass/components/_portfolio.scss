@@ -34,12 +34,23 @@
 }
 
 .filter {
-@extend %flex-centred;
-  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+@media screen and (min-width:769px) {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
 }
 
 .filter__label:not(:last-child) {
   margin-right: 8px;
+  
+  @media screen and (max-width:480px) {
+    margin-bottom: 15px;
+  }
 }
 
 /* стили кардсета */
@@ -79,10 +90,12 @@
   @extend %list;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
+  
+  @media screen and (min-width:769px) {
+    display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+  }
 }
 
 .card-set__img {
@@ -91,9 +104,11 @@
 }
 
 .card-set__item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-top: 30px;
-  margin-left: 30px;
+  flex-basis: calc((100% - 2 * 30px) / 3);
+
+  @media screen and (max-width:480px) {
+    margin-bottom: 30px;
+  }
 }
 
 .card-set__thumb {
