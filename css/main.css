@@ -377,7 +377,7 @@ summary {
 .section__title {
   font-weight: 700;
   font-size: 28px;
-  line-height: 1.18px;
+  line-height: 1.18;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -763,12 +763,13 @@ summary {
 }
 
 .hero {
+  width: 100%;
   margin: 0 auto;
   max-width: 480px;
 }
 @media screen and (min-width: 481px) {
   .hero {
-    max-width: 768px;
+    max-width: 1200px;
   }
 }
 @media screen and (min-width: 769px) {
@@ -800,7 +801,7 @@ summary {
 @media screen and (min-width: 481px) {
   .overlay {
     height: 400px;
-    max-width: 768px;
+    max-width: 1200px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/tablet/hero.jpg");
   }
 }
@@ -874,15 +875,24 @@ summary {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 480px) {
+  .modal {
+    position: relative;
+  }
+}
+@media screen and (min-width: 481px) {
   .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 528px;
-    height: 581px;
+    width: 450px;
     transform: translate(-50%, -50%) scale(1);
     transition: transform var(--anim);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
   }
 }
 
@@ -901,10 +911,9 @@ summary {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: var(--tertiary-text-color);
-  --color1: currentColor;
   transition: fill var(--anim);
 }
-.modal__close-button:hover, .modal__close-button:focus {
+.modal__close-button:hover, .modal__close-button:focus .modal__close-icon {
   fill: var(--accent-color);
 }
 
@@ -913,8 +922,13 @@ summary {
   margin-bottom: 30px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    line-height: 1.15;
+  }
 }
 
 .modal__box {
@@ -1005,7 +1019,14 @@ summary {
 .checkbox {
   position: relative;
   margin-bottom: 30px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.16;
+}
+@media screen and (min-width: 1200px) {
+  .checkbox {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .checkbox__link {
@@ -1050,23 +1071,24 @@ summary {
 }
 
 .features {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+  --items: 1;
+}
+@media screen and (min-width: 768px) {
+  .features {
+    --items: 2;
+  }
 }
 @media screen and (min-width: 1200px) {
   .features {
-    display: flex;
-    gap: var(--indent);
     --items: 4;
   }
 }
 
 .features__item {
-  width: 100%;
-}
-@media screen and (min-width: 1200px) {
-  .features__item {
-    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
-  }
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
 .features__text {
@@ -1192,6 +1214,16 @@ summary {
   justify-content: center;
   gap: 30px;
   --items: 2;
+}
+@media screen and (min-width: 768px) {
+  .clients {
+    --items: 3;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .clients {
+    --items: 6;
+  }
 }
 
 .clients__item {

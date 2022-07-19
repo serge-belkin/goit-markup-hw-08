@@ -14,21 +14,24 @@
 
 .features {
   @extend %list;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+    --items: 1;
+    
+
+  @media screen and (min-width:768px) {
+      --items: 2;
+    }
 
   @media screen and (min-width:1200px) {
-    display: flex;
-    gap: var(--indent);
     --items: 4;
   }
   
 }
 
 .features__item {
-  width: 100%;
-  @media screen and (min-width:1200px) {
 flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
-  }
 }
 
 .features__text {
