@@ -37,18 +37,23 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
-@media screen and (min-width:769px) {
+
+@media screen and (min-width:768px) {
   display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width:1200px) {
+margin-bottom: 50px;
 }
 }
 
 .filter__label:not(:last-child) {
   margin-right: 8px;
   
-  @media screen and (max-width:480px) {
+  @media screen and (max-width:767px) {
     margin-bottom: 15px;
   }
 }
@@ -78,23 +83,18 @@
     }
 }
 
-.card-set__titles {
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
-  padding: 20px 24px;
-  background-color: var(--tertiary-text-color);
-}
-
 .card-set {
   @extend %list;
-  margin: 0;
-  padding: 0;
+  display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @media screen and (max-width:767px) {
+        --items: 1;
+      }
   
-  @media screen and (min-width:769px) {
-    display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
+  @media screen and (min-width:768px) and (max-width:1199px) {
+    --items: 2;
   }
 }
 
@@ -105,10 +105,8 @@
 
 .card-set__item {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
-
-  @media screen and (max-width:480px) {
-    margin-bottom: 30px;
-  }
+  display: flex;
+  flex-direction: column;
 }
 
 .card-set__thumb {
@@ -124,9 +122,7 @@
 .card-set__description {
 @extend %text;
   position: absolute;
-  display: inline-block;
   bottom: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -134,12 +130,36 @@
   line-height: 1.58;
   color: var(--tertiary-text-color);
   background-color: rgba(33, 150, 243, 0.9);
-  padding: 63px 24px;
+  padding: 77px 24px;
+  
   transform: translateY(100%);
   transition: transform var(--anim);
 
   .card-set__item:hover & {
       transform: translateY(0);
     }
+
+    @media screen and (min-width:768px) {
+      padding-top: 49px;
+    }
+
+    @media screen and (min-width:768px) {
+      padding: 63px 24px;
+    }
+
+@media screen and (max-width:480px) {
+  font-size: 14px;
+  padding-top: 49px;
+}
+}
+
+.card-set__titles {
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  padding: 20px 24px;
+  background-color: var(--tertiary-text-color);
+
+  flex-grow: 1;
 }
 
