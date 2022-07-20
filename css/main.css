@@ -330,6 +330,12 @@ summary {
   display: list-item;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .body {
   font-family: var(--main-font);
   letter-spacing: 0.03em;
@@ -364,10 +370,7 @@ summary {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.section--no-padding {
-  padding-top: 0;
-}
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -1134,6 +1137,7 @@ summary {
 @media screen and (min-width: 1200px) {
   .section--no-padding {
     display: block;
+    padding-top: 0;
   }
 }
 
@@ -1141,22 +1145,35 @@ summary {
   background-color: #F5F4FA;
 }
 
+.our-team__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+@media screen and (max-width: 767px) {
+  .our-team__list {
+    --items: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .our-team__list {
+    --items: 2;
+  }
+}
 @media screen and (min-width: 1200px) {
   .our-team__list {
-    display: flex;
+    --items: 4;
   }
 }
 
 .team-member {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team-member:not(:last-child) {
-  margin-bottom: 30px;
-}
-@media screen and (min-width: 1200px) {
-  .team-member:not(:last-child) {
-    margin-right: 30px;
+@media screen and (max-width: 767px) {
+  .team-member {
+    max-width: 450px;
   }
 }
 
@@ -1269,8 +1286,16 @@ summary {
   margin-bottom: 20px;
 }
 
-.footer__box {
-  text-align: center;
+@media screen and (max-width: 767px) {
+  .footer__box {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer__box {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 1200px) {
   .footer__box {
@@ -1281,17 +1306,24 @@ summary {
 /* Стили списка адресов */
 .addres-thumb {
   width: 231px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .addres-thumb {
     margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .addres-thumb {
+    margin-right: 160px;
   }
 }
 @media screen and (min-width: 1200px) {
   .addres-thumb {
     margin-right: 70px;
+    text-align: left;
   }
 }
 
@@ -1323,6 +1355,17 @@ summary {
   color: var(--tertiary-text-color);
 }
 
+@media screen and (min-width: 768px) {
+  .addres-sm-thumb {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .addres-sm-thumb {
+    margin-bottom: 48px;
+  }
+}
+
 /* стили списка соц-сетей */
 .footer-sm__title,
 .subscription__title {
@@ -1344,12 +1387,17 @@ summary {
   --color1: currentColor ;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .footer-sm {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-sm {
+    margin-right: auto;
   }
 }
 
@@ -1366,7 +1414,7 @@ summary {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1199px) {
   .subscription__box {
     align-items: center;
   }
@@ -1375,6 +1423,7 @@ summary {
 .subscription__email {
   height: 50px;
   width: 100%;
+  max-width: 450px;
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
